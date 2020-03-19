@@ -28,6 +28,12 @@ public class Body {
         imgFileName = b.imgFileName;
     }
 
+    public void draw() {
+        StdDraw.enableDoubleBuffering();
+        StdDraw.picture(xxPos, yyPos, "images/"+imgFileName);
+        StdDraw.show();
+    }
+
     public double calcDistance(Body b) {
         double distance = Math.sqrt(
             Math.pow(this.xxPos - b.xxPos, 2) + 
@@ -71,8 +77,16 @@ public class Body {
         return yNetforce;
     }
 
-    public double update(double dt, double fX, double fY) {
-        
+    public void update(double dt, double fX, double fY) {
+        double ax = fX / this.mass;
+        double ay = fY / this.mass;
+
+        this.xxVel += ax * dt;
+        this.yyVel += ay * dt;
+
+        this.xxPos += this.xxVel * dt;
+        this.yyPos += this.yyVel * dt;
+
     }
 
 

@@ -19,6 +19,7 @@ public class LinkedListDequeTest {
 		return true;
 	}
 
+
 	/* Prints a nice message based on whether a test passed. 
 	 * The \n means newline. */
 	public static void printTestStatus(boolean passed) {
@@ -36,20 +37,26 @@ public class LinkedListDequeTest {
 	public static void addIsEmptySizeTest() {
 		System.out.println("Running add/isEmpty/Size test.");
 		System.out.println("Make sure to uncomment the lines below (and delete this print statement).");
-		/*
+		
 		LinkedListDeque<String> lld1 = new LinkedListDeque<String>();
 
 		boolean passed = checkEmpty(true, lld1.isEmpty());
+		printTestStatus(passed);
 
 		lld1.addFirst("front");
 		
 		// The && operator is the same as "and" in Python.
 		// It's a binary operator that returns true if both arguments true, and false otherwise.
 		passed = checkSize(1, lld1.size()) && passed;
+		printTestStatus(passed);
+
 		passed = checkEmpty(false, lld1.isEmpty()) && passed;
+		printTestStatus(passed);
 
 		lld1.addLast("middle");
+
 		passed = checkSize(2, lld1.size()) && passed;
+		printTestStatus(passed);
 
 		lld1.addLast("back");
 		passed = checkSize(3, lld1.size()) && passed;
@@ -58,7 +65,7 @@ public class LinkedListDequeTest {
 		lld1.printDeque();
 
 		printTestStatus(passed);
-		*/
+		
 	}
 
 	/** Adds an item, then removes an item, and ensures that dll is empty afterwards. */
@@ -67,22 +74,25 @@ public class LinkedListDequeTest {
 		System.out.println("Running add/remove test.");
 
 		System.out.println("Make sure to uncomment the lines below (and delete this print statement).");
-		/*
+		
 		LinkedListDeque<Integer> lld1 = new LinkedListDeque<Integer>();
 		// should be empty 
 		boolean passed = checkEmpty(true, lld1.isEmpty());
+		printTestStatus(passed);
 
 		lld1.addFirst(10);
 		// should not be empty 
 		passed = checkEmpty(false, lld1.isEmpty()) && passed;
+		printTestStatus(passed);
 
 		lld1.removeFirst();
 		// should be empty 
 		passed = checkEmpty(true, lld1.isEmpty()) && passed;
 
 		printTestStatus(passed);
-		*/
+		
 	}
+
 
 	public static void main(String[] args) {
 		System.out.println("Running tests.\n");
